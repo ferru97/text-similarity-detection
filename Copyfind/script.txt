@@ -7,7 +7,7 @@
 Documents,2
 //
 // Next, you must specify the reporting folder, so that Copyfind can start to maintain its logs and records
-ReportFolder,[cf-output]	// the report folder should go next
+ReportFolder,/home/vito/Desktop/Vito/projects/python/Elsa/text-similarity-detection/Copyfind/results	// the report folder should go next
 //
 // Now you can begin to specify documents and comparison specificationsin any order you like
 //
@@ -16,7 +16,7 @@ ReportFolder,[cf-output]	// the report folder should go next
 // <FileName> is the full filename of the document; <DirectoryName> is the full filename of the directory containing a collection of documents
 //
 // In this example, I specify four of the documents individually, like this:
-Document,1,[doc-input]	// put docs in Group 1
+Document,1,/home/vito/Desktop/Vito/projects/python/Elsa/text-similarity-detection/Copyfind/docs	// put docs in Group 1
 //
 // the comparison specfiers have default values, set by the Documents command, but you can change them explicitly as follows:
 PhraseLength,6		// default 6
