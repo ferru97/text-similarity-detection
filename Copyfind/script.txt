@@ -7,7 +7,7 @@
 Documents,2
 //
 // Next, you must specify the reporting folder, so that Copyfind can start to maintain its logs and records
-ReportFolder,/home/vito/Desktop/Vito/projects/python/Elsa/text-similarity-detection/Copyfind/results	// the report folder should go next
+ReportFolder,C:\SSD Workspace\python\text-similarity-detection\Copyfind\results	// the report folder should go next
 //
 // Now you can begin to specify documents and comparison specificationsin any order you like
 //
@@ -16,14 +16,15 @@ ReportFolder,/home/vito/Desktop/Vito/projects/python/Elsa/text-similarity-detect
 // <FileName> is the full filename of the document; <DirectoryName> is the full filename of the directory containing a collection of documents
 //
 // In this example, I specify four of the documents individually, like this:
-Document,1,/home/vito/Desktop/Vito/projects/python/Elsa/text-similarity-detection/Copyfind/docs	// put docs in Group 1
+Document,1,C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt	// put docs in Group 1
+Document,1,C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt
 //
 // the comparison specfiers have default values, set by the Documents command, but you can change them explicitly as follows:
-PhraseLength,6		// default 6
-WordThreshold,6		// default 100
+PhraseLength,1		// default 6
+WordThreshold,1		// default 100
 SkipLength,20		// default 20
 MismatchTolerance,2	// default 2
-MismatchPercentage,80	// default 80
+MismatchPercentage,1	// default 80
 BriefReport,0		// default 0 = No/False (note that: 1 = Yes/True)
 IgnoreCase,0		// default 0 = No/False (note that: 1 = Yes/True)
 IgnoreNumbers,0		// default 0 = No/False (note that: 1 = Yes/True)

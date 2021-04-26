@@ -1,0 +1,11 @@
+Starting Report Files
+Starting to Load and Hash-Code Documents
+Loading C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
+Loading C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt
+Done Loading Documents
+Starting to Compare Documents
+Comparing Documents, 1 Completed
+Match: 224	228	227	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
+Done Comparing Documents
+Finishing Report Files
+Done. Total CPU Time: 0.028 seconds

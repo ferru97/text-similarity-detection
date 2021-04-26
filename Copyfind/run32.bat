@@ -1,0 +1,1 @@
+Copyfind\Copyfind.4.1.5.exe < Copyfind\script.txt 
