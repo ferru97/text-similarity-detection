@@ -9,6 +9,7 @@ class CopyFind:
     cf_output = "Copyfind/results/"
     cf_exe64 = "Copyfind\\run64.bat"
     cf_exe32 = "Copyfind\\run32.bat"
+    cf_out_file = "Copyfind/results/matches.txt"
     cf_script_template = "resources/script-template.txt"
     
     def __init__(self, doc1, doc2, bit):
@@ -35,3 +36,15 @@ class CopyFind:
 
         result = subprocess.run([self.cf_exe], capture_output=True)
         out = str(result.stdout).replace('\n',' ')+" "+str(result.stderr).replace('\n',' ').strip()
+
+        perfect_match = 0
+        overall_match_l = 0
+        overall_match_r = 0
+        res = utils.readFile(self.cf_out_file)
+        res = res.split()
+        if len(res)>2:
+            perfect_match = int(res[0])
+            overall_match_l = int(res[1])
+            overall_match_r = int(res[2])
+
+        return perfect_match, overall_match_l, overall_match_r
