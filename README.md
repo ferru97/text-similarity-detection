@@ -15,4 +15,5 @@ A tool to calculate the similarity between two texts using Copyfind4.1.5
 The results are saved on the *results* folder
 
 ## Parameter tuning
-To tune the parameters of the detection change the values of the **PARAMETERS AREA** of the *resources/script-template.txt* file
+To tune the parameters of the detection change the values of the **PARAMETERS AREA** of the *resources/script-template.txt* file.
+A list of all the parameters il available [HERE](https://plagiarism.bloomfieldmedia.com/software/wcopyfind-instructions/)
