@@ -5,7 +5,7 @@ Loading C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt
 Done Loading Documents
 Starting to Compare Documents
 Comparing Documents, 1 Completed
-Match: 224	228	227	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
+Match: 69	69	69	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
 Done Comparing Documents
 Finishing Report Files
-Done. Total CPU Time: 0.028 seconds
+Done. Total CPU Time: 0.005 seconds
