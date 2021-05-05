@@ -1,25 +1,11 @@
-// A line that starts with either "//" or "#" is a comment line and is ignored
-// A "//" or "#" in the middle of a line starts a comment and effectively ends the line
-// Blanks or tabs at the end of a line or at the beginning or end of a parameter are ignored
-// An emptyline or end of file mark terminates the program
-//
-// You must always start by specifying the total number of documents, so that Copyfind allocates the proper amount of memory
 Documents,2
-//
-// Next, you must specify the reporting folder, so that Copyfind can start to maintain its logs and records
 ReportFolder,C:\SSD Workspace\python\text-similarity-detection\Copyfind\results	// the report folder should go next
-//
-// Now you can begin to specify documents and comparison specificationsin any order you like
-//
-// Each document entry has two parameters: <Group>,<FileName/DirectoryName>
-// <Group> is any integer except 0 (empty) and specifies the group of documents to which the present document(s) belongs
-// <FileName> is the full filename of the document; <DirectoryName> is the full filename of the directory containing a collection of documents
-//
-// In this example, I specify four of the documents individually, like this:
-Document,1,C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt	// put docs in Group 1
+Document,1,C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
 Document,1,C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt
 //
-// the comparison specfiers have default values, set by the Documents command, but you can change them explicitly as follows:
+//
+//
+// PARAMETERS AREA:
 PhraseLength,1		// default 6
 WordThreshold,1		// default 100
 SkipLength,20		// default 20
@@ -33,21 +19,9 @@ IgnorePunctuation,0	// default 0 = No/False (note that: 1 = Yes/True)
 SkipLongWords,0		// default 0 = No/False (note that: 1 = Yes/True)
 SkipNonwords,0		// default 0 = No/False (note that: 1 = Yes/True)
 //
-// You can also set the locale, to work with other languages. It must be a recognized locale (see WCopyfind for the list)
-Locale,English		// default English
 //
-// Once you have specified all the documents and the comparison specifications, you need to initialize the comparison processes
-PrepareForComparisons	// loads the documents and gets ready to run comparisons
 //
-// Now, you can compare groups of documents against one another, or compare one group internally
-//
-// This next comparison compares each document in group1 against each document in group2:
-//Compare,1,4	// Compare group1 documents against group4 documents (no internal group comparisons)
-//
-// This next comparison compares each document in group 1 against all the other documents in group1
-Compare,1,1	// Compare group1 documents internally against one another
-//
-// When you are done comparing the current collection of documents, you can finish up the entire operation and close all the report files, etc.
-Done	// Finish everything and deallocates the entire document collection so that Copyfind can start again fresh
-//
-// I could now start afresh with another "Documents..." commend, etc. (just as though we were starting Copyfind fresh
+Locale,English
+PrepareForComparisons
+Compare,1,1
+Done

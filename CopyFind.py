@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 import subprocess
 import utils
 import os
@@ -40,11 +41,25 @@ class CopyFind:
         perfect_match = 0
         overall_match_l = 0
         overall_match_r = 0
+        shared_l = ""
+        shared_r = ""
         res = utils.readFile(self.cf_out_file)
         res = res.split()
         if len(res)>2:
             perfect_match = int(res[0])
             overall_match_l = int(res[1])
             overall_match_r = int(res[2])
+            shared_l = self.getCommonPhrases(self.cf_output+"doc1.txt.doc2.txt.html")
+            shared_r = self.getCommonPhrases(self.cf_output+"doc2.txt.doc1.txt.html")
 
-        return perfect_match, overall_match_l, overall_match_r
+        return perfect_match, overall_match_l, overall_match_r, shared_l, shared_r
+
+
+    def getCommonPhrases(self,file):
+        content = utils.readFile(file)
+        soup = BeautifulSoup(content, "html.parser")
+        phrases = []
+        for p in soup.find_all("font",{"color": "#FF0000"}):
+            phrases.append(p.text.strip())
+        
+        return " - ".join(phrases)

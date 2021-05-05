@@ -7,17 +7,24 @@ def parseFiles(csv, col1, col2, bit):
     df = pd.read_csv("resources/"+csv, error_bad_lines=False, warn_bad_lines=True)
     total = len(df.index)
     for index, row in df.iterrows():
-        utils.printProgressBar(index+1, total)
-        cp = CopyFind(row[col1],row[col2],bit)
-        perfect_match, overall_match_l, overall_match_r = cp.run()
+        try:
+            utils.printProgressBar(index+1, total)
+            cp = CopyFind(row[col1],row[col2],bit)
+            perfect_match, overall_match_r, overall_match_l, shared_l, shared_r = cp.run()
 
-        df.loc[index,"Perfect Match"] = perfect_match
-        df.loc[index,"Perfect Match (L%)"] = int((100/len(row[col2].split())*perfect_match))
-        df.loc[index,"Perfect Match (R%)"] = int((100/len(row[col1].split())*perfect_match))
-        df.loc[index,"Overall Match (L)"] = overall_match_l
-        df.loc[index,"Overall Match (L%)"] = int((100/len(row[col2].split())*overall_match_l))
-        df.loc[index,"Overall Match (R)"] = overall_match_r
-        df.loc[index,"Overall Match (R%)"] = int((100/len(row[col1].split())*overall_match_r))
+            df.loc[index,"#words {}".format(col1)] = len(row[col1].split())
+            df.loc[index,"#words {}".format(col2)] = len(row[col2].split())
+            df.loc[index,"Perfect Match"] = perfect_match
+            df.loc[index,"Perfect Match % ({})".format(col1)] = float("{:.2f}".format(100/len(row[col1].split())*perfect_match))
+            df.loc[index,"Perfect Match % ({})".format(col2)] = float("{:.2f}".format(100/len(row[col2].split())*perfect_match))
+            df.loc[index,"Overall Match ({})".format(col1)] = overall_match_l
+            df.loc[index,"Overall Match % ({})".format(col1)] = float("{:.2f}".format(100/len(row[col1].split())*overall_match_l))
+            df.loc[index,"Overall Match ({})".format(col2)] = overall_match_r
+            df.loc[index,"Overall Match % ({})".format(col2)] = float("{:.2f}".format(100/len(row[col2].split())*overall_match_r))
+            df.loc[index,"Shared ({})".format(col1)] = shared_l
+            df.loc[index,"Shared ({})".format(col2)] = shared_r
+        except Exception as e:
+            print("Error: "+str(e))
 
     df.to_csv("results/"+csv)
 

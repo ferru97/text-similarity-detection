@@ -1,1 +1,1 @@
-69	69	69	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
+2	2	2	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc2.txt	C:\SSD Workspace\python\text-similarity-detection\Copyfind\docs\doc1.txt
