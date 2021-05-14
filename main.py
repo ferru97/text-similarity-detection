@@ -4,7 +4,7 @@ import pandas as pd
 from CopyFind import CopyFind
 
 def parseFiles(csv, col1, col2, bit):
-    df = pd.read_csv("resources/"+csv, error_bad_lines=False, warn_bad_lines=True)
+    df = pd.read_csv("resources/"+csv, quoting=csv.QUOTE_NONE, error_bad_lines=False, warn_bad_lines=True)
     total = len(df.index)
     for index, row in df.iterrows():
         try:
