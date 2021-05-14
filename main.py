@@ -1,10 +1,11 @@
 import sys
 import utils
 import pandas as pd
+import csv
 from CopyFind import CopyFind
 
-def parseFiles(csv, col1, col2, bit):
-    df = pd.read_csv("resources/"+csv, quoting=csv.QUOTE_NONE, error_bad_lines=False, warn_bad_lines=True)
+def parseFiles(csv_file, col1, col2, bit):
+    df = pd.read_csv("resources/"+csv_file, quoting=csv.QUOTE_NONE, error_bad_lines=False, warn_bad_lines=True)
     total = len(df.index)
     for index, row in df.iterrows():
         try:
@@ -26,7 +27,7 @@ def parseFiles(csv, col1, col2, bit):
         except Exception as e:
             print("Error: "+str(e))
 
-    df.to_csv("results/"+csv)
+    df.to_csv("results/"+csv_file)
 
 
 #py main.py ea_press_release.csv  snippet_body  pr_snippet_body_1 64
